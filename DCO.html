@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Data Center Operations (DCO) Technician Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1a1f35 100%);
+  color:#e2e8f0;
+  line-height:1.6;
+}
+
+header{
+  background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+  padding:50px 30px;
+  border-bottom:2px solid #3b82f6;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+header h1{
+  font-size:42px;
+  margin-bottom:12px;
+  background: linear-gradient(135deg, #38bdf8, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight:600;
+}
+
+header .subtitle{
+  font-size:18px;
+  color:#cbd5e1;
+  margin-bottom:16px;
+  font-weight:500;
+}
+
+header .skills-summary{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:16px;
+}
+
+header .skill-badge{
+  background:rgba(59, 130, 246, 0.15);
+  border:1px solid #3b82f6;
+  color:#93c5fd;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:500;
+}
+
+.container{
+  width:90%;
+  max-width:1400px;
+  margin:auto;
+  padding:50px 0;
+}
+
+.section-title{
+  font-size:32px;
+  margin-bottom:10px;
+  margin-top:40px;
+  color:#38bdf8;
+  font-weight:600;
+  border-left:4px solid #3b82f6;
+  padding-left:16px;
+}
+
+.section-description{
+  color:#cbd5e1;
+  margin-bottom:30px;
+  font-size:14px;
+}
+
+.category-section{
+  margin-bottom:50px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:24px;
+  margin-bottom:20px;
+}
+
+.card{
+  background:linear-gradient(135deg, #1a202c 0%, #111827 100%);
+  border:1px solid #1e293b;
+  border-radius:12px;
+  padding:24px;
+  transition:all 0.3s ease;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  background:linear-gradient(90deg, #3b82f6, #38bdf8);
+  transform:scaleX(0);
+  transition:transform 0.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#3b82f6;
+  box-shadow:0 12px 24px rgba(59, 130, 246, 0.15);
+}
+
+.card:hover::before{
+  transform:scaleX(1);
+}
+
+.tag{
+  display:inline-block;
+  background:linear-gradient(135deg, #1d4ed8, #2563eb);
+  color:white;
+  padding:6px 12px;
+  border-radius:6px;
+  font-size:11px;
+  margin-bottom:12px;
+  font-weight:600;
+  letter-spacing:0.5px;
+}
+
+.tag.devops{background:linear-gradient(135deg, #7c3aed, #a855f7);}
+.tag.iac{background:linear-gradient(135deg, #059669, #10b981);}
+.tag.monitoring{background:linear-gradient(135deg, #dc2626, #ef4444);}
+.tag.cicd{background:linear-gradient(135deg, #f59e0b, #fbbf24);}
+.tag.security{background:linear-gradient(135deg, #7c3aed, #a855f7);}
+.tag.cloud{background:linear-gradient(135deg, #0891b2, #06b6d4);}
+.tag.hardware{background:linear-gradient(135deg, #b91c1c, #dc2626);}
+.tag.bios{background:linear-gradient(135deg, #d97706, #f59e0b);}
+.tag.pxe{background:linear-gradient(135deg, #059669, #10b981);}
+.tag.recovery{background:linear-gradient(135deg, #6366f1, #8b5cf6);}
+.tag.bmc{background:linear-gradient(135deg, #0891b2, #06b6d4);}
+.tag.rack{background:linear-gradient(135deg, #6366f1, #8b5cf6);}
+.tag.ticket{background:linear-gradient(135deg, #059669, #10b981);}
+.tag.breakfix{background:linear-gradient(135deg, #b91c1c, #dc2626);}
+.tag.raid{background:linear-gradient(135deg, #d97706, #f59e0b);}
+.tag.networking{background:linear-gradient(135deg, #0891b2, #06b6d4);}
+.tag.drivers{background:linear-gradient(135deg, #7c3aed, #a855f7);}
+.tag.linux{background:linear-gradient(135deg, #1f2937, #374151);}
+.tag.cabling{background:linear-gradient(135deg, #6366f1, #8b5cf6);}
+.tag.phys-fail{background:linear-gradient(135deg, #b91c1c, #dc2626);}
+.tag.ipconfig{background:linear-gradient(135deg, #0891b2, #06b6d4);}
+.tag.phys-layer{background:linear-gradient(135deg, #6366f1, #8b5cf6);}
+
+.card h3{
+  margin-bottom:12px;
+  font-size:20px;
+  font-weight:600;
+  color:#f1f5f9;
+}
+
+.card p{
+  color:#cbd5e1;
+  margin-bottom:14px;
+  font-size:14px;
+}
+
+.meta{
+  font-size:13px;
+  color:#94a3b8;
+  margin-bottom:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.meta-item{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.outcome{
+  background:rgba(59, 130, 246, 0.08);
+  border-left:3px solid #3b82f6;
+  padding:10px 12px;
+  border-radius:4px;
+  font-size:12px;
+  color:#cbd5e1;
+  margin-top:12px;
+}
+
+button{
+  background:linear-gradient(135deg, #3b82f6, #2563eb);
+  border:none;
+  color:white;
+  padding:10px 18px;
+  font-weight:600;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+  transition:all 0.2s ease;
+  margin-top:12px;
+}
+
+button:hover{
+  background:linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform:translateY(-2px);
+  box-shadow:0 6px 12px rgba(59, 130, 246, 0.3);
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.9);
+  overflow:auto;
+  padding:40px 20px;
+  z-index:1000;
+  animation:fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.modal-content{
+  max-width:1000px;
+  margin:auto;
+  background:#111827;
+  padding:40px;
+  border-radius:12px;
+  border:1px solid #1e293b;
+  animation:slideUp 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.modal-content h2{
+  font-size:28px;
+  margin-bottom:20px;
+  color:#38bdf8;
+  font-weight:600;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 10px;
+}
+
+.objective{
+  background:rgba(100, 116, 139, 0.06);
+  border-left:4px solid #64748b;
+  padding:16px;
+  border-radius:6px;
+  margin:20px 0;
+  color:#cbd5e1;
+  font-style: italic;
+}
+
+.objective strong{
+  color: #38bdf8;
+  font-style: normal;
+}
+
+.modal-content h3{
+  font-size:20px;
+  color:#f1f5f9;
+  margin-top:30px;
+  margin-bottom:15px;
+  font-weight:600;
+  border-bottom:1px solid #1e293b;
+  padding-bottom:8px;
+}
+
+.step{
+  margin-bottom: 20px;
+}
+
+.step strong{
+  display: block;
+  font-size: 16px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.sub-list{
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #cbd5e1;
+}
+
+.sub-list li{
+  margin-bottom: 5px;
+}
+
+.modal-content ul, .modal-content ol{
+  margin-left:20px;
+  color:#cbd5e1;
+}
+
+.modal-content li{
+  margin-bottom:8px;
+}
+
+.architecture{
+  background:#020617;
+  padding:20px;
+  border-radius:8px;
+  margin:16px 0;
+  border:1px solid #1e293b;
+}
+
+.code-block{
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 10px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+img{
+  width:100%;
+  border-radius:8px;
+  margin:20px 0;
+  border:1px solid #1e293b;
+}
+
+.achievements{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px;
+  margin:20px 0;
+}
+
+.achievement{
+  background:rgba(16, 185, 129, 0.1);
+  border-left:3px solid #10b981;
+  padding:14px;
+  border-radius:6px;
+  color:#cbd5e1;
+  font-size:13px;
+}
+
+.achievement strong{
+  color:#10b981;
+}
+
+footer{
+  text-align:center;
+  padding:40px 30px;
+  color:#64748b;
+  border-top:1px solid #1e293b;
+  margin-top:60px;
+}
+
+@media (max-width:768px){
+  header h1{font-size:28px;}
+  .section-title{font-size:24px;}
+  .grid{grid-template-columns:1fr;}
+  .modal-content{padding:24px;}
+}
+
+
+/* Visual polish */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(56,189,248,0.08), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(59,130,246,0.10), transparent 22%),
+    radial-gradient(circle at 50% 85%, rgba(14,165,233,0.06), transparent 24%);
+}
+
+.container{position:relative; z-index:1;}
+
+.card{
+  backdrop-filter: blur(8px);
+  min-height:100%;
+}
+
+.card h3{line-height:1.35;}
+
+.card p{min-height:72px;}
+
+.meta{
+  padding:12px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(148,163,184,0.12);
+  border-radius:10px;
+}
+
+.outcome{
+  border-radius:8px;
+}
+
+button{
+  width:100%;
+}
+
+.modal-content{
+  width:min(1100px, 92vw);
+  box-shadow:0 24px 60px rgba(0,0,0,0.45);
+}
+
+.project-photos{
+  margin:22px 0 10px;
+}
+
+.project-photos h3{
+  margin-top:10px;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:14px;
+}
+
+.photo-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid #243244;
+  border-radius:12px;
+  overflow:hidden;
+  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.photo-card:hover{
+  transform:translateY(-4px);
+  border-color:#38bdf8;
+  box-shadow:0 10px 24px rgba(56,189,248,0.14);
+}
+
+.photo-thumb{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  display:block;
+  margin:0;
+  border:none;
+  cursor:zoom-in;
+  background:#0f172a;
+}
+
+.photo-meta{
+  padding:12px 14px 14px;
+}
+
+.photo-meta strong{
+  display:block;
+  color:#f8fafc;
+  margin-bottom:4px;
+  font-size:14px;
+}
+
+.photo-meta span{
+  color:#94a3b8;
+  font-size:12px;
+}
+
+.photo-hint{
+  color:#94a3b8;
+  font-size:12px;
+  margin-top:10px;
+}
+
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(2,6,23,0.94);
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+
+.lightbox.open{
+  display:flex;
+}
+
+.lightbox-inner{
+  position:relative;
+  width:min(96vw, 1300px);
+  max-height:92vh;
+}
+
+.lightbox img{
+  width:100%;
+  max-height:80vh;
+  object-fit:contain;
+  margin:0;
+  border:none;
+  border-radius:14px;
+  background:#020617;
+}
+
+.lightbox-caption{
+  margin-top:12px;
+  color:#cbd5e1;
+  text-align:center;
+  font-size:14px;
+}
+
+.lightbox-close{
+  position:absolute;
+  top:-16px;
+  right:-4px;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(15,23,42,0.9);
+  color:white;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+  .photo-thumb{height:150px;}
+  .card p{min-height:auto;}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<h1>Hands-On Data Center Operations Home Lab Portfolio</h1>
+<div class="subtitle">Server Hardware • Physical Infrastructure • Networking • Troubleshooting • Break-Fix Operations</div>
+  <div class="skills-summary">
+    <span class="skill-badge">Hardware (Dell Laptop and Switches)</span>
+    <span class="skill-badge">BIOS/UEFI Configuration</span>
+    <span class="skill-badge">PXE Boot & Network Installation</span>
+    <span class="skill-badge">RAID Configuration & Recovery</span>
+    <span class="skill-badge">Linux System Administration</span>
+    <span class="skill-badge">Network Troubleshooting (NIC, Cables, Ports)</span>
+    <span class="skill-badge">Physical Infrastructure (Cabling, Labeling, Rack Management)</span>
+    <span class="skill-badge">Disk/Boot Failure Diagnostics</span>
+    <span class="skill-badge">Break-Fix Troubleshooting & Documentation</span>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- HARDWARE TRIAGE & TROUBLESHOOTING SECTION -->
+<div class="category-section">
+  <h2 class="section-title">Hardware Triage & Troubleshooting</h2>
+
+  <div class="hardware-marquee">
+    <div class="marquee-viewport">
+      <div class="marquee-track">
+        <div class="marquee-item"><img src="HARDWARE/project-4/components-1.JPG" alt="Hardware project image 1"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-4/components-2.JPG" alt="Hardware project image 2"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-4/components-3.JPG" alt="Hardware project image 3"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-2/0.jpeg" alt="Hardware project image 4"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-3/2.JPG" alt="Hardware project image 5"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-2/10.png" alt="Hardware project image 6"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-5/2.1.JPG" alt="Hardware project image 7"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-5/8.JPG" alt="Hardware project image 8"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/1.jpg" alt="Hardware project image 9"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/2.jpg" alt="Hardware project image 10"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/3.jpeg" alt="Hardware project image 11"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/4.jpg" alt="Hardware project image 12"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/5.jpg" alt="Hardware project image 13"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/6.jpg" alt="Hardware project image 14"></div>
+
+        <!-- duplicate set for seamless loop -->
+        <div class="marquee-item"><img src="HARDWARE/project-4/components-1.JPG" alt="Hardware project image 1 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-4/components-2.JPG" alt="Hardware project image 2 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-4/components-3.JPG" alt="Hardware project image 3 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-2/0.jpeg" alt="Hardware project image 4 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-3/2.JPG" alt="Hardware project image 5 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-2/10.png" alt="Hardware project image 6 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-5/2.1.JPG" alt="Hardware project image 7 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-5/8.JPG" alt="Hardware project image 8 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/1.jpg" alt="Hardware project image 9 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/2.jpg" alt="Hardware project image 10 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/3.jpeg" alt="Hardware project image 11 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/4.jpg" alt="Hardware project image 12 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/5.jpg" alt="Hardware project image 13 duplicate"></div>
+        <div class="marquee-item"><img src="HARDWARE/project-6/6.jpg" alt="Hardware project image 14 duplicate"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hardware-marquee {
+    --card-width: 420px;
+    --card-height: 300px;
+    --gap: 20px;
+
+    position: relative;
+    width: 100%;
+    margin: 35px 0;
+    padding: 18px 0 20px;
+    background: linear-gradient(135deg, #1a202c 0%, #111827 100%);
+    border: 1px solid #374151;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .marquee-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #111827;
+  }
+
+  .marquee-viewport::-webkit-scrollbar {
+    height: 12px;
+  }
+
+  .marquee-viewport::-webkit-scrollbar-track {
+    background: #111827;
+    border-radius: 999px;
+  }
+
+  .marquee-viewport::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 999px;
+    border: 2px solid #111827;
+  }
+
+  .marquee-viewport::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    width: max-content;
+    padding: 0 16px;
+    animation: marquee-scroll 45s linear infinite;
+    will-change: transform;
+  }
+
+  .hardware-marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-item {
+    flex: 0 0 var(--card-width);
+    width: var(--card-width);
+    height: var(--card-height);
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    background: #0f172a;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .marquee-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .marquee-item:hover img {
+    transform: scale(1.05);
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50%));
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .hardware-marquee {
+      --card-width: 340px;
+      --card-height: 240px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hardware-marquee {
+      --card-width: 280px;
+      --card-height: 200px;
+      --gap: 16px;
+      padding: 14px 0 18px;
+    }
+  }
+</style>
+
+<div class="section-description">Break-fix diagnostics, component validation, boot-path recovery, and storage failure simulation—core break-fix skills for data center incident response.</div>
+
+<div class="grid">
+
+<div class="card">
+<span class="tag hardware">Hardware Diagnostics</span>
+<h3>Hardware Triage & Health-Check Workflow (Windows)</h3>
+<p>I inspected system health from BIOS and diagnostics logs, verified component detection, and logged hardware findings as a technician would for a real data center incident.</p>
+<div class="outcome">✓ Documented system health, hardware status, and incident findings for effective triage.</div>
+<button onclick="openModal('hw-triage')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag hardware">Hardware Diagnostics</span>
+<h3>Hardware Triage & Health-Check Workflow (Linux)</h3>
+<p>I used Linux command-line tools to inventory hardware, check SMART disk health, verify kernel detection, inspect sensors, and documented system triage findings in an AWS-style format.</p>
+<div class="outcome">✓ Performed Linux hardware inventory and diagnostics with professional incident documentation.</div>
+<button onclick="openModal('hw-triage-linux')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag bios">BIOS & Boot Order</span>
+<h3>BIOS/UEFI and Boot Order Troubleshooting</h3>
+<p>I checked BIOS settings, boot mode, and one-time boot menu to identify boot-order failures and restored the correct startup path for the operating system.</p>
+<div class="outcome">✓ Resolved boot-order and BIOS configuration problems with step-by-step verification.</div>
+<button onclick="openModal('bios-config')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag hardware">Component Recovery</span>
+<h3>RAM Diagnostics & Component-Level Troubleshooting</h3>
+<p>I diagnosed memory faults through BIOS checks and diagnostics, performed component reseating to resolve contact failures, and validated POST behavior after remediation.</p>
+<div class="outcome">✓ Identified component-level faults and restored system stability through reseating and validation.</div>
+<button onclick="openModal('ram-diag')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag recovery">Disk & Boot Recovery</span>
+<h3>Disk Failure, Boot Failure & Recovery Validation</h3>
+<p>I simulated disk or boot-device failures, verified whether storage is detected, restored the correct boot path, and confirmed the system returned to normal operation.</p>
+<div class="outcome">✓ Validated disk and boot recovery procedures with documentation for restoration.</div>
+<button onclick="openModal('disk-recovery')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag hardware">Infrastructure</span>
+<h3>Basic Rack / Cable / Port / Label Validation</h3>
+<p>I practiced physical discipline by mapping network topology, labeling both cable ends, checking link status, and validating connectivity after changes with structured documentation.</p>
+<div class="outcome">✓ Demonstrated small-scale rack/cable/port mapping with professional labeling and validation procedures.</div>
+<button onclick="openModal('rack-cable')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag pxe">PXE Readiness</span>
+<h3>PXE Boot Availability Validation</h3>
+<p>I validated firmware-level PXE boot support, observed DHCP and boot messages, and documented whether the system was ready for network reprovisioning.</p>
+<div class="outcome">✓ Verified PXE firmware capability and deployment readiness without requiring a full PXE server.</div>
+<button onclick="openModal('pxe-availability')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag raid">RAID</span>
+<h3>RAID Array Creation, Formatting, and Disaster Recovery</h3>
+<p>I created a RAID 10 array using mdadm, formatted it with ext4, simulated drive failures, performed hot-swapping, and cleaned up the array—demonstrating storage redundancy and recovery skills.</p>
+<div class="outcome">✓ Successfully created, tested, and recovered a RAID array with professional documentation.</div>
+<button onclick="openModal('raid-demo')">View Task and Accomplishment</button>
+</div>
+
+</div>
+</div>
+<!-- NETWORKING & CONNECTIVITY SECTION -->
+<div class="category-section">
+<h2 class="section-title">Networking & Physical Connectivity</h2>
+<div class="section-description">Network isolation workflows, path differentiation, DHCP/DNS validation, and troubleshooting progressions for layered network incident response and reprovision readiness.</div>
+
+<div class="grid">
+
+
+<div class="card">
+<span class="tag networking">IP Configuration</span>
+<h3>Host Network Configuration & Addressing Validation</h3>
+<p>Node reachable locally but unreachable externally after provisioning: I verified DHCP and static IPv4 configuration on a host, tested gateway and internet reachability, and switched between addressing modes to prove address behavior.</p>
+<div class="outcome">✓ Confirmed host-level IPv4 addressing behavior and identified configuration issues.</div>
+<button onclick="openModal('ipconfig')">View Task and Accomplishment</button>
+</div>
+
+<div class="card">
+<span class="tag networking">Path Isolation</span>
+<h3>Layered Network Path Isolation (Host → Switch → Router → Internet)</h3>
+<p>I isolated network faults by testing cable/link status, DHCP renewal, gateway reachability, external routing, and DNS resolution.</p>
+<div class="outcome">✓ Performed layered fault isolation from physical link to DNS resolution.</div>
+<button onclick="openModal('network-isolation')">View Task and Accomplishment</button>
+</div>
+</div>
+</div>
+
+<!-- HARDWARE TRIAGE MODAL -->
+<div class="modal" id="hw-triage">
+<div class="modal-content">
+<span class="close" onclick="closeModal('hw-triage')">&times;</span>
+
+<h2>Hardware Triage & Health-Check Workflow (Windows)</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I inspected hardware health, verified BIOS and diagnostics, and documented findings as a data center technician would during a hardware triage incident.
+</div>
+
+<h3>Steps Followed</h3>
+<div class="step">
+<strong>1. Record system details</strong>
+<ul class="sub-list">
+<li>Device model and serial/service tag</li>
+<li>CPU and memory configuration</li>
+<li>Disk type and capacity</li>
+<li>Installed OS and firmware version</li>
+<img src="HARDWARE/project-1/a.JPG" alt="Windows System Information" height="700" width="350">
+<img src="HARDWARE/project-1/b.JPG" alt="Windows System Information" height="700" width="350">
+<img src="HARDWARE/project-1/2.JPG" alt="Windows System Information" height="700" width="350">
+<img src="HARDWARE/project-1/3.JPG" alt="Windows System Information" height="700" width="350">
+<img src="HARDWARE/project-1/1.JPG" alt="Windows System Information" height="700" width="350">
+<img src="HARDWARE/project-1/0.JPG" alt="Windows System Information" height="700" width="350">
+</ul>
+</div>
+
+<div class="step">
+<strong>2. Enter BIOS / UEFI</strong>
+<ul class="sub-list">
+<li>Restart and press F2 (Dell) or F12 for diagnostics menu</li>
+<li>Verify boot mode, secure boot state, and detected disks</li>
+<li>Record whether the internal drive and RAM are detected</li>
+<img src="HARDWARE/project-1/4.1.JPG" alt="Windows System Information" height="700" width="350">
+</ul>
+</div>
+
+<div class="step">
+<strong>3. Run manufacturer diagnostics</strong>
+<ul class="sub-list">
+<li>Boot Dell diagnostics via F12</li>
+<li>Check memory, disk, fan, and temperature status</li>
+<li>Note any warnings, failures, or error codes</li>
+<img src="HARDWARE/project-1/6.JPG" alt="Windows System Information" height="600" width="300">
+<img src="HARDWARE/project-1/7.JPG" alt="Windows System Information" height="600" width="300">
+<img src="HARDWARE/project-1/8.JPG" alt="Windows System Information" height="600" width="300">
+</ul>
+</div>
+
+<div class="step">
+<strong>4. Review system logs</strong>
+<ul class="sub-list">
+<li>Windows: Event Viewer → Windows Logs → System</li>
+<li>Look for disk/controller errors, unexpected shutdowns, thermal warnings</li>
+<li>Identify repeated critical events, not one-off warnings</li>
+<img src="HARDWARE/project-1/4.2.JPG" alt="Windows System Information" height="700" width="350">
+</ul>
+</div>
+
+<div class="step">
+<strong>5. Confirm device manager status</strong>
+<ul class="sub-list">
+<li>Open Device Manager</li>
+<li>Check for missing drivers, yellow warnings, unknown devices</li>
+<li>Determine whether the issue is hardware, firmware, or driver-related</li>
+<img src="HARDWARE/project-1/4.3.JPG" alt="Windows System Information" height="600" width="300">
+</ul>
+</div>
+
+<h3>Outcome</h3>
+<ul>
+  <li>Validated whether the machine was operational or required repair</li>
+  <li>Captured a structured triage log of hardware detection and diagnostics</li>
+  <li>Prepared a concise incident summary for resume-ready documentation</li>
+</ul>
+</div>
+</div>
+
+<!-- HARDWARE TRIAGE LINUX MODAL -->
+<div class="modal" id="hw-triage-linux">
+<div class="modal-content">
+<span class="close" onclick="closeModal('hw-triage-linux')">&times;</span>
+
+<h2>Hardware Triage & Health-Check Workflow (Linux)</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I used Linux command-line tools to perform hardware inventory, validate component detection, check disk and sensor health, and documented findings.
+</div>
+
+<h3>Steps Followed</h3>
+<strong>1. Record hardware inventory</strong>
+<p>Run the following commands to gather system information:</p>
+<div class="code-block">
+  <strong>Linux Server Hardware Validation Workflow</strong><br><br>
+
+  <strong>1. Confirm kernel and OS state</strong><br>
+  To get kernel information: <code>uname -a</code><br>
+  To get OS release information: <code>cat /etc/os-release</code><br><br>
+
+  <strong>2. Confirm system identity</strong><br>
+  To get manufacturer, model, and serial number: <code>sudo dmidecode -t system</code><br><br>
+
+  <strong>3. Verify processor detection</strong><br>
+  To get processor details: <code>lscpu</code><br><br>
+
+  <strong>4. Verify memory detection</strong><br>
+  To get memory information: <code>free -h</code><br><br>
+
+  <strong>5. Verify storage detection</strong><br>
+  To list block devices: <code>lsblk</code><br>
+  To verify disk detection and partition visibility: <code>sudo fdisk -l</code><br><br>
+
+  <strong>6. Verify disk health</strong><br>
+  To check disk health: <code>sudo smartctl -a /dev/{disk-name}</code><br>
+  <em>Requires the smartmontools package</em><br><br>
+
+  <strong>7. Verify PCI hardware detection</strong><br>
+  To check PCI hardware detection: <code>sudo lspci</code><br><br>
+
+  <strong>8. Verify loaded kernel drivers</strong><br>
+  To check loaded drivers/modules: <code>lsmod</code><br><br>
+
+  <strong>9. Check thermal and fan sensors</strong><br>
+  To detect available sensors: <code>sudo sensors-detect</code><br>
+  To display temperature and fan information: <code>sensors</code><br>
+  <em>Requires the lm-sensors package</em><br><br>
+
+  <strong>10. Review hardware and kernel events</strong><br>
+  To view kernel messages: <code>dmesg | less</code><br>
+  To view system logs and events: <code>sudo journalctl</code><br>
+</div>
+<img src="HARDWARE/project-2/2.JPG" alt="Linux Hardware Triage Commands">
+<img src="HARDWARE/project-2/3.png" alt="Linux Hardware Triage Commands">
+<img src="HARDWARE/project-2/4.png" alt="Linux Hardware Triage Commands">
+<img src="HARDWARE/project-2/5.png" alt="Linux Hardware Triage Commands">
+<img src="HARDWARE/project-2/7.png" alt="Linux Hardware Triage Commands">
+<img src="HARDWARE/project-2/8.png" alt="Linux Hardware Triage Commands">
+<img src="HARDWARE/project-2/9.png" alt="Linux Hardware Triage Commands">
+<img src="HARDWARE/project-2/10.png" alt="Linux Hardware Triage Commands">
+
+
+<h3>Outcome</h3>
+<ul>
+  <li>Performed structured Linux server hardware validation including system identity, CPU, memory, storage, PCI device detection, and kernel driver verification</li>
+  <li>Executed disk health diagnostics using SMART data and validated block-device enumeration at kernel level</li>
+  <li>Reviewed thermal sensors, hardware telemetry, and boot-time kernel events to confirm operational stability</li>
+  <li>Conducted log-based fault triage using dmesg and journalctl and documented results in data center–style incident closure format</li>
+</ul>
+</div>
+</div>
+
+<!-- BIOS/UEFI MODAL -->
+<div class="modal" id="bios-config">
+<div class="modal-content">
+<span class="close" onclick="closeModal('bios-config')">&times;</span>
+
+<h2>BIOS/UEFI and Boot Order Troubleshooting</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I diagnosed boot failures by checking BIOS boot settings, boot mode, one-time boot menu, and identified incorrect boot order or device selection.
+</div>
+
+<h3>Steps Followed</h3>
+<div class="step">
+<strong>1. Performed boot validation on my Dell Laptop to understand how boot sequence configuration, UEFI mode, Secure Boot state, and storage detection affect system startup behavior.</strong>
+<strong>2. Accessed BIOS setup (F2) to review boot mode, Secure Boot configuration, SATA/NVMe device detection, and default boot priority. Verified presence of internal OS device and availability of alternative boot targets including USB media and NIC (PXE) via one-time boot menu (F12).</strong>
+<strong>3. Simulated startup failure scenarios by modifying boot order and prioritizing non-bootable devices ahead of the internal OS disk. Observed expected failure conditions (“no bootable device”) and confirmed storage remained visible at firmware level, isolating root cause to incorrect boot sequence rather than disk or controller failure.</strong>
+<strong>4. Validated recovery workflow by restoring Windows Boot Manager / internal SSD as primary boot target and confirming successful system startup.</strong>
+<strong>5. Reviewed UEFI boot mode configuration and Secure Boot status to understand their impact on boot entry visibility and OS compatibility.</strong>
+</div>
+
+<img src="HARDWARE/project-3/1.JPG" alt="UEFI Boot Mode and Secure Boot Configuration">
+<img src="HARDWARE/project-3/2.JPG" alt="UEFI Boot Mode and Secure Boot Configuration">
+<img src="HARDWARE/project-3/3.JPG" alt="UEFI Boot Mode and Secure Boot Configuration">
+<img src="HARDWARE/project-3/4.JPG" alt="UEFI Boot Mode and Secure Boot Configuration">
+<img src="HARDWARE/project-3/5.JPG" alt="UEFI Boot Mode and Secure Boot Configuration">
+
+<h3>Outcome</h3>
+<ul>
+  <li>Reviewed UEFI boot mode configuration and Secure Boot status to understand their impact on boot entry visibility and OS compatibility.
+</li>
+</ul>
+</div>
+</div>
+
+
+<!-- DISK RECOVERY MODAL -->
+<div class="modal" id="disk-recovery">
+<div class="modal-content">
+<span class="close" onclick="closeModal('disk-recovery')">&times;</span>
+
+<h2>Disk Failure, Boot Failure & Recovery Validation</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I simulated disk or boot-device failure, verified detection in BIOS/VM settings, restored the correct boot path, and validated the system recovers.
+</div>
+
+<strong>Build a safe test environment</strong>
+<pre>
+- I simulated boot-device failure scenarios by changing firmware boot order
+- Tested system startup behavior with unavailable or missing storage devices.
+<img src="HARDWARE/project-5/4.JPG" alt="Disk Failure Simulation" height="700" width="350">
+<img src="HARDWARE/project-5/5.JPG" alt="Disk Failure Simulation" height="700" width="350">
+<img src="HARDWARE/project-5/6.JPG" alt="Disk Failure Simulation" height="700" width="350">
+- I verified whether the primary disk remained visible in BIOS 
+- I observed expected failure messages such as “no bootable device” and fallback boot attempts.
+<img src="HARDWARE/project-5/8.JPG" alt="Disk Failure Simulation" height="700" width="350">
+- I also tested startup behavior without installed RAM to understand POST dependency conditions\
+<img src="HARDWARE/project-5/3.JPG" alt="Disk Failure Simulation" height="700" width="350">
+<img src="HARDWARE/project-5/2.0.JPG" alt="Disk Failure Simulation" height="700" width="350">
+<img src="HARDWARE/project-5/2.1.JPG" alt="Disk Failure Simulation" height="700" width="350">
+- Distinguish hardware-level failures from boot-sequence misconfiguration.
+
+- To complete the recovery workflow, I restored the correct boot priority with the internal OS disk as the primary device
+- Confirmed normal system startup.
+- I also validated alternate boot-source handling by testing USB-based boot selection through the one-time boot menu.
+<img src="HARDWARE/project-5/0.JPEG" alt="Disk Failure Simulation" height="700" width="350">
+</pre>
+
+
+<h3>Outcome</h3>
+<ul>
+  <li>I simulated disk-removal and boot-order failure conditions to analyze POST behavior and firmware boot-path responses</li>
+<li>Restored the correct boot configuratio</li>
+<li>Verified successful system recovery through BIOS-level troubleshooting.</li>
+</ul>
+</div>
+</div>
+
+
+<!-- RAM DIAGNOSTICS MODAL -->
+<div class="modal" id="ram-diag">
+<div class="modal-content">
+<span class="close" onclick="closeModal('ram-diag')">&times;</span>
+
+<h2>RAM Diagnostics & Component-Level Troubleshooting</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I diagnosed memory and component faults through BIOS validation and diagnostics, performed reseating to resolve contact issues, and validated POST behavior and system stability after remediation.
+</div>
+
+<h3>Steps Followed</h3>
+<strong>1. Check BIOS memory detection</strong>
+<pre>
+- I verified system memory detection at the BIOS level and confirmed the installed RAM configuration.
+  <img src="HARDWARE/project-4/1.JPG" alt="BIOS Memory Detection" height="700" width="350">
+  <img src="HARDWARE/project-4/bothRam.JPG" alt="BIOS Memory Detection" height="700" width="350">
+- I matched expected hardware inventory and ran manufacturer diagnostics to validate DIMM health
+- I checked system logs for memory-related errors.
+- To simulate a real component detection issue, I temporarily removed one memory module
+<img src="HARDWARE/project-4/components-1.JPG" alt="BIOS Memory Detection" height="700" width="350">
+<img src="HARDWARE/project-4/components-2.JPG" alt="BIOS Memory Detection" height="700" width="350">
+<img src="HARDWARE/project-4/components-3.JPG" alt="BIOS Memory Detection" height="700" width="350">
+- Then I observed the change in reported capacity and POST behavior.
+<img src="HARDWARE/project-4/noRam.JPG" alt="BIOS Memory Detection" height="700" width="350">
+- I then reseated the DIMMs to restore proper slot contact and confirmed the system again detected the full memory configuration.
+- After remediation, I revalidated BIOS memory reporting and confirmed stable POST and normal system operation.
+</pre>
+
+
+<h3>Outcome</h3>
+<ul>
+  <li>I diagnosed memory detection changes using BIOS validation and vendor diagnostics, simulated DIMM-removal scenarios to observe POST behavior, restored correct hardware recognition through reseating, and confirmed system stability after component-level remediation.</li>
+</ul>
+</div>
+</div>
+
+
+<!-- RACK CABLE MODAL -->
+<div class="modal" id="rack-cable">
+<div class="modal-content">
+<span class="close" onclick="closeModal('rack-cable')">&times;</span>
+
+<h2>Basic Rack / Cable / Port / Label Validation</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I practiced the physical discipline of device placement, cable routing, port mapping, and labeling—critical skills for real infrastructure installations and troubleshooting.
+</div>
+
+<h3>Steps Followed</h3>
+<div class="step">
+
+
+<strong>1. A simple network map</strong>
+<p>Document the physical layout:</p>
+<ul class="sub-list">
+<li>Router LAN1 → Switch#001 Port 1</li>
+<li>Switch#001 Port 2 → Laptop-2025-1</li>
+<li>Switch#001 Port 3 → Switch#002 Port 1</li>
+<li>Switch#001 Port 4 → Laptop-2016-2</li>
+<li>Switch#002 Port 2 → Laptop-2012-3</li>
+</ul>
+</div>
+<img src="HARDWARE/project-6/2.jpg" alt="Network Topology Map">
+<img src="HARDWARE/project-6/1.jpg" alt="Network Topology Map">
+<img src="HARDWARE/project-6/3.jpeg" alt="Network Topology Map">
+<div class="step">
+<strong>2. Label both cable ends</strong>
+<p>Cables have clear, consistent labels. Every cable includes:</p>
+<ul class="sub-list">
+<li>Source device and port</li>
+<li>Destination device and port</li>
+</ul>
+</div>
+
+<div class="step">
+<strong>3. Connect carefully</strong>
+<ul class="sub-list">
+<li>Keep cables organized and traceable</li>
+<li>Used Velcro for cable management</li>
+<li>Avoid messy or random routing</li>
+<li>Follow a consistent path (up, down, or around rack)</li>
+</ul>
+</div>
+<img src="HARDWARE/project-6/6.jpg" alt="Network Topology Map">
+<img src="HARDWARE/project-6/4.jpg" alt="Network Topology Map">
+<img src="HARDWARE/project-6/5.jpg" alt="Network Topology Map">
+
+<div class="step">
+<strong>4. Validate link status</strong>
+<ul class="sub-list">
+<li>Check link lights on switches and adapters</li>
+<li>Verify network connection status in OS</li>
+<li>Test connectivity by pinging the gateway from each device</li>
+<li>Confirm correct ports are active</li>
+</ul>
+</div>
+
+<div class="step">
+<strong>Outcome</strong>
+<ul class="sub-list">
+<li>Here, I have demonstrated structured cable and port mapping with visual documentation</li>
+<li>Applied professional labeling discipline to physical infrastructure</li>
+<li>Validated connectivity after topology changes using link lights and ping tests</li>
+<li>Performed post-change validation consistent with infrastructure technician practices</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- PXE AVAILABILITY MODAL -->
+<div class="modal" id="pxe-availability">
+<div class="modal-content">
+<span class="close" onclick="closeModal('pxe-availability')">&times;</span>
+
+<h2>PXE Boot Availability Validation</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I confirmed whether the system firmware and network path are capable of PXE boot, and documented the results from the pre-OS boot layer.
+</div>
+
+<h3>Steps Followed</h3>
+<strong>1. Open one-time boot menu</strong>
+<pre>
+- I accessed the one-time boot menu (F12) and confirmed availability of PXE / UEFI network boot options.
+<img src="HARDWARE/project-7/1.JPEG" alt="One-Time Boot Menu with PXE Option" height="700" width="350">
+<img src="HARDWARE/project-7/2.JPEG" alt="One-Time Boot Menu with PXE Option" height="700" width="350">
+- I initiated a PXE IPv4 boot attempt to verify NIC firmware-level network boot capability.
+<img src="HARDWARE/project-7/3.JPEG" alt="One-Time Boot Menu with PXE Option" height="700" width="350">
+<img src="HARDWARE/project-7/4.JPEG" alt="One-Time Boot Menu with PXE Option" height="700" width="350">
+- I observed DHCP response behavior during PXE initialization to confirm upstream network reachability.
+- I monitored NIC link activity during the PXE attempt to validate physical network connectivity prior to OS load.
+<img src="HARDWARE/project-7/5.JPEG" alt="One-Time Boot Menu with PXE Option" height="700" width="350">
+- I restored the default boot sequence by selecting Windows Boot Manager and confirmed normal system startup.
+<img src="HARDWARE/project-7/6.JPEG" alt="One-Time Boot Menu with PXE Option" height="700" width="350">
+
+</pre>
+
+<h3>Outcome</h3>
+<ul>
+  <li>I validated NIC firmware PXE capability and confirmed DHCP reachability from the pre-OS environment.</li>
+  <li>I verified physical link-state behavior during network boot initialization.</li>
+  <li>I restored the standard boot path and confirmed successful OS startup after testing.</li>
+</ul>
+</div>
+</div>
+
+<!-- RAID DEMO MODAL -->
+<div class="modal" id="raid-demo">
+<div class="modal-content">
+<span class="close" onclick="closeModal('raid-demo')">&times;</span>
+
+<h2>RAID Array Creation, Formatting, and Disaster Recovery</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I created a RAID 10 array using mdadm, formatted it with ext4, simulated drive failures, performed hot-swapping, and cleaned up the array—demonstrating storage redundancy and recovery skills.
+</div>
+
+<h3>Steps Followed</h3>
+
+<strong>1. Planned RAID1layout</strong>
+<pre>
+Reviewed RAID1 architecture - mirroring (redundancy).
+Confirmed requirement of minimum 2 disks before array creation.
+</pre>
+
+<strong>2. Prepared disks for RAID membership</strong>
+<pre>
+Created Linux RAID partitions on 2 block devices using fdisk.
+Assigned correct RAID partition type to each disk before array assembly.
+</pre>
+
+<strong>3. Created RAID1 array using mdadm</strong>
+<pre>
+Created RAID1 array /dev/md/raid-demo using two member disks.
+Verified successful array initialization and device participation.
+</pre>
+<img src="HARDWARE/project-8/1_creating-raid-array.png" alt="RAID Disk Preparation" height="700" width="350">
+<img src="HARDWARE/project-8/2_array_created.png" alt="RAID Disk Preparation" height="700" width="350">
+
+<strong>4. Validated array health and status</strong>
+<pre>
+Checked array status using:
+cat /proc/mdstat
+mdadm --detail /dev/md/raid
+
+Confirmed:
+Raid Level: raid1
+Active devices: 2
+Failed devices: 0
+</pre>
+<img src="HARDWARE/project-8/3.png" alt="RAID Disk Preparation" height="700" width="350">
+
+
+<h3>Outcome</h3>
+<ul>
+  <li>Created and validated a RAID1 array using Linux software RAID (mdadm)</li>
+  <li>Verified correct disk participation and mirrored configuration</li>
+  <li>Simulated drive removal and confirmed rebuild behavior and recovery workflow</li>
+  <li>Monitored array health using standard Linux RAID status tools</li>
+</ul>
+</div>
+</div>
+
+<!-- STATIC VS DHCP MODAL -->
+<div class="modal" id="ipconfig">
+<div class="modal-content">
+<span class="close" onclick="closeModal('ipconfig')">&times;</span>
+
+<h2>Host Network Configuration & Addressing Validation</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I verified how DHCP and static IPv4 addresses behave, and troubleshot connectivity by changing the host addressing mode.
+</div>
+
+<h3>Steps Followed</h3>
+<div class="step">
+<strong>1. Check current addressing</strong>
+<div class="code-block">ipconfig /all</div>
+<p>Look for:</p>
+<ul class="sub-list">
+<li>DHCP Enabled: Yes</li>
+<li>Assigned IPv4 address</li>
+<li>Gateway and DNS settings</li>
+</ul>
+</div>
+<img src="NETWORKING/project-1/1.png" alt="IP Configuration" height="700" width="350">
+<div class="step">
+<strong>2. Switch to static mode</strong>
+<p>Ethernet → Properties → IPv4</p>
+<p>Set:</p>
+<ul class="sub-list">
+<li>IP: 192.168.1.50</li>
+<li>Subnet: 255.255.255.0</li>
+<li>Gateway: 192.168.1.1</li>
+<li>DNS: 8.8.8.8</li>
+</ul>
+</div>
+<img src="NETWORKING/project-1/2.png" alt="IP Configuration" height="700" width="350">
+<div class="step">
+<strong>3. Test connectivity</strong>
+<div class="code-block">ping 192.168.1.1<br>ping google.com</div>
+</div>
+<img src="NETWORKING/project-1/3.png" alt="IP Configuration" height="700" width="350">
+<div class="step">
+<strong>4. Return to DHCP</strong>
+<div class="code-block">ipconfig /renew</div>
+<p>Confirm a new DHCP address is assigned</p>
+</div>
+<img src="NETWORKING/project-1/4.png" alt="IP Configuration" height="700" width="350">
+<h3>Outcome</h3>
+<ul>
+  <li>Confirmed IP assignment behavior for DHCP and static addressing</li>
+  <li>Proved local gateway and external connectivity checks</li>
+  <li>Captured evidence of configuration-related connectivity issues</li>
+</ul>
+</div>
+</div>
+
+<!-- NETWORK ISOLATION MODAL -->
+<div class="modal" id="network-isolation">
+<div class="modal-content">
+<span class="close" onclick="closeModal('network-isolation')">&times;</span>
+
+<h2>Layered Network Path Isolation (Host → Switch → Router → Internet)</h2>
+
+<div class="objective">
+  <strong>Objective:</strong> I systematically isolated network faults from physical link issues through gateway, external IP, and DNS testing.
+</div>
+
+<h3>Steps Followed</h3>
+
+<div class="step">
+<strong>1. Check physical failure</strong>
+<p>Ethernet </p>
+<div class="code-block">ipconfig</div>
+<p>Expected: 192.168.254.*</p>
+<p>If "Media disconnected", then check: Cable, Port, NIC status </p>
+</div>
+<div class="step">
+<strong>2. Check IP address</strong>
+<div class="code-block">ipconfig /all</div>
+<p>Expected: Details as in the below picture, it means DHCP is working, Device is connected to network </p>
+<p>If "169.254.x.x", then DHCP failure, no network communication </p>
+</div>
+<img src="NETWORKING/project-2/a1.png" alt="Network Path Isolation" height="700" width="350">
+<img src="NETWORKING/project-2/a2.serverReachable.png" alt="Network Path Isolation" height="500" width="250">
+
+
+<div class="step">
+<strong>3. Subnet correctness</strong>
+<div class="code-block">Check if the IP address is within the correct subnet range</div>
+<p>Expected: 255.255.255.0, means host can reach gateway </p>
+<p>If mismatch, the host cannot reach the gateway and local routing will fail </p>
+</div>
+
+<div class="step">
+<strong>4. Test TCP/IP stack routing</strong>
+<div class="code-block">ping 127.0.0.1</div>
+<p>Expected: Successful ping to localhost means TCP/IP stack is functioning </p>
+<p>If ping fails, it indicates a local host configuration issue or TCP/IP stack problem </p>
+</div>
+<img src="NETWORKING/project-2/localhost.png" alt="Network Path Isolation" height="500" width="250">
+
+<div class="step">
+<strong>5. Gateway reachability (local network validation)</strong>
+<div class="code-block">ping 192.168.1.1</div>
+<p>Expected: Successful ping to gateway means local network connectivity is working </p>
+<p>Also means Cable, Switch, VLAN, Local Routing is functioning </p>
+<p>If ping fails, it indicates a local network issue such as switch port failure, VLAN misconfiguration </p>
+</div>
+<img src="NETWORKING/project-2/a3.gatewayRechable.png" alt="Network Path Isolation" height="500" width="250">
+
+
+<div class="step">
+<strong>6. External routing (internet reachability)</strong>
+<div class="code-block">ping 9.9.9.9</div>
+<p>Expected: Successful ping to external IP means internet connectivity is working </p>
+<p>Also means Cable, Switch, VLAN, Local Routing is functioning </p>
+<p>If ping fails, it indicates an issue with upstream routing or DNS configuration </p>
+<p>Also if gateway is misconfigured</p>
+</div>
+<img src="NETWORKING/project-2/a4.dnsReachable-dnsCorrectConfiguration.png" alt="Network Path Isolation" height="500" width="250">
+
+<div class="step">
+<strong>7.DNS resolution</strong>
+<div class="code-block">nslookup google.com</div>
+<p>Expected: Successful DNS resolution means domain names can be translated to IP addresses </p>
+<p>Also means Cable, Switch, VLAN, Local Routing is functioning </p>
+<p>If resolution fails, it indicates a DNS configuration issue </p>
+<p>Fix the DNS settings</p>
+</div>
+
+<h3>Outcome</h3>
+<ul>
+  <li>Confirmed whether the fault was physical, local network, upstream routing, or DNS</li>
+  <li>Applied layered troubleshooting exactly like a DC technician</li>
+  <li>Created a clear resolution path for common network outages</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<footer>
+AWS DCO
+</footer>
+
+<script>
+// Use local image paths here, e.g. "images/photo1.jpg" or "../assets/photo2.png".
+// Add as many photos as needed; the gallery supports more than four images.
+const projectPhotos = {};
+
+
+function openModal(id){
+  document.getElementById(id).style.display='block';
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(id){
+  document.getElementById(id).style.display='none';
+  document.body.style.overflow='auto';
+}
+
+function openLightbox(src, caption){
+  const lightbox = document.getElementById('image-lightbox');
+  document.getElementById('lightbox-image').src = src;
+  document.getElementById('lightbox-caption').textContent = caption || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeLightbox(event){
+  if(event){ event.stopPropagation(); }
+  const lightbox = document.getElementById('image-lightbox');
+  lightbox.classList.remove('open');
+  document.getElementById('lightbox-image').src = '';
+  document.getElementById('lightbox-caption').textContent = '';
+  if(!document.querySelector('.modal[style*="display: block"]')){
+    document.body.style.overflow='auto';
+  }
+}
+
+function renderPhotoBlock(photos){
+  const block = document.createElement('div');
+  block.className = 'project-photos';
+  block.innerHTML = `
+      <h3>Project Photos</h3>
+      <div class="photo-grid">
+        ${photos.map(photo => `
+          <div class="photo-card">
+            <img class="photo-thumb" src="${photo.src}" alt="${photo.label}" />
+          </div>
+        `).join('')}
+      </div>
+  `;
+
+  block.querySelectorAll('.photo-thumb').forEach((img, index) => {
+    const meta = photos[index] || {};
+    img.addEventListener('click', function(event){
+      event.stopPropagation();
+      openLightbox(meta.src || img.src, `${meta.label || ''} — ${meta.caption || ''}`.replace(/^\s*—\s*/, ''));
+    });
+  });
+
+  return block;
+}
+
+function injectPhotoSections(){
+  document.querySelectorAll('.modal').forEach(modal => {
+    const content = modal.querySelector('.modal-content');
+    if(!content) return;
+    const photos = projectPhotos[modal.id] || [];
+    if(!photos.length || content.querySelector('.project-photos')) return;
+
+    const placeholders = content.querySelectorAll('[data-photo-section="projectPhotos"]');
+    if(placeholders.length){
+      placeholders.forEach(placeholder => {
+        const block = renderPhotoBlock(photos);
+        placeholder.replaceWith(block);
+      });
+      return;
+    }
+
+    const block = renderPhotoBlock(photos);
+    const objective = content.querySelector('.objective');
+    if(objective){
+      objective.insertAdjacentElement('afterend', block);
+    } else {
+      content.insertBefore(block, content.children[1] || null);
+    }
+  });
+}
+
+window.onclick=function(e){
+  document.querySelectorAll('.modal').forEach(modal=>{
+    if(e.target==modal){
+      modal.style.display='none';
+      document.body.style.overflow='auto';
+    }
+  });
+
+  const lightbox = document.getElementById('image-lightbox');
+  if(e.target === lightbox){
+    closeLightbox(e);
+  }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    const lightbox = document.getElementById('image-lightbox');
+    if(lightbox.classList.contains('open')){
+      closeLightbox();
+      return;
+    }
+    document.querySelectorAll('.modal').forEach(modal=>{
+      modal.style.display='none';
+      document.body.style.overflow='auto';
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', injectPhotoSections);
+
+</script>
+
+<div class="lightbox" id="image-lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" type="button" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
+    <img id="lightbox-image" src="" alt="Expanded project photo" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+</body>
+</html>
+
